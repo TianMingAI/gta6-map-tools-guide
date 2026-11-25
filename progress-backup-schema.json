@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GTA 6 Map Tools Local Progress Backup",
+  "description": "Public JSON backup structure exported from https://gta6maptools.com/progress (localStorage key: gta6mt_progress_v1).",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer",
+      "description": "Schema version of the local progress backup."
+    },
+    "activeSlot": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3,
+      "description": "Active browser save slot (1 to 3)."
+    },
+    "spoilerFree": {
+      "type": "boolean",
+      "description": "Hides story spoilers across pins and guides when true."
+    },
+    "hideFound": {
+      "type": "boolean",
+      "description": "Hides completed markers on the interactive map when true."
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["ps5", "xbox"],
+      "description": "Preferred console button icon display."
+    },
+    "slots": {
+      "type": "object",
+      "description": "Per-slot completed entity IDs, checklist ticks, and saved map viewport preferences."
+    }
+  },
+  "required": ["activeSlot", "slots"]
+}
